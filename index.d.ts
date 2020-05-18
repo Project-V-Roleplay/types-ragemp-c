@@ -337,7 +337,7 @@ interface EntityMp {
 	setVisible(toggle: boolean, p1: boolean): void;
 	stopAnim(animation: string, animGroup: string, p2: number): void;
 	stopSynchronizedAnim(p0: number, p1: boolean): boolean;
-	streamInHandler(entity: EntityMp): void;
+  streamInHandler(entity: EntityMp): void;
 }
 
 interface CheckpointMp extends EntityMp {
@@ -376,10 +376,19 @@ interface ObjectMp extends EntityMp {
 }
 
 interface PedMp extends EntityMp {
-	spawnPosition: Vector3Mp;
-	taskPlayAnim(animDictionary: string, animationName: string, speed: number, speedMultiplier: number, duration: number,
-		flag: number, playbackRate: number, lockX: boolean, lockY: boolean, lockZ: boolean): void;
-	// TODO
+  spawnPosition: Vector3Mp;
+  taskPlayAnim(animDictionary: string, animationName: string, speed: number, speedMultiplier: number, duration: number,
+               flag: number, playbackRate: number, lockX: boolean, lockY: boolean, lockZ: boolean): void;
+  setHeadOverlay(overlayId, index, opacity): void;
+  setHeadOverlayColor(overlayId, colorType, colorID, secondColorID): void;
+  setDecoration(collection: Hash, overlay: Hash): void;
+  setComponentVariation(componentId: number, drawableId: number, textureId: number, paletteId: number): void;
+  setHeadBlendData(shapeFirstID: number, shapeSecondID: number, shapeThirdID: number, skinFirstID: number,
+                   skinSecondID: number, skinThirdID: number, shapeMix: number, skinMix: number, thirdMix: number, isParent: boolean): void;
+  setFaceFeature(index: number, scale: number): void;
+  setFacialDecoration(collection: Hash, overlay: Hash): void;
+  setEyeColor(index: number): void;
+  setHairColor(colorID: number, highlightColorID: number): void;
 }
 
 interface PickupMp extends EntityMp {
