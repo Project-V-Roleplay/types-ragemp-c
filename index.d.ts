@@ -389,6 +389,143 @@ interface PedMp extends EntityMp {
   setFacialDecoration(collection: Hash, overlay: Hash): void;
   setEyeColor(index: number): void;
   setHairColor(colorID: number, highlightColorID: number): void;
+  clearBloodDamage() : void;
+  clearDecorations(): void;
+	taskChatTo(target: Handle, p2: any, p3: number, p4: number, p5: number, p6: number, p7: number): void;
+	taskClearLookAt(): void;
+	taskClimb(unused: boolean): void;
+	taskClimbLadder(p1: number): void;
+	taskCombat(targetPed: Handle, p2: number, p3: number): void;
+	taskCombatHatedTargetsAround(radius: number, p2: number): void;
+	taskCombatHatedTargetsInArea(x: number, y: number, z: number, radius: number, p5: any): void;
+	taskCower(duration: number): void;
+	taskDriveBy(targetPed: Handle, p2: any, targetX: number, targetY: number, targetZ: number, p6: number, p7: any,
+							p8: boolean, firingPattern: Hash): void;
+	taskEnterVehicle(vehicle: Handle, timeout: number, seat: number, speed: number, p5: number, p6: any): void;
+	taskFollowNavMeshToCoord(x: number, y: number, z: number, speed: number, timeout: number, stoppingRange: number,
+													 persistFollowing: boolean, unk: number): void;
+	taskFollowNavMeshToCoordAdvanced(x: number, y: number, z: number, speed: number, timeout: number, unkFloat: number,
+																	 unkInt: number, unkX: number, unkY: number, unkZ: number, unk2: number): void;
+	taskFollowPointRoute(speed: number, unknown: number): void;
+	taskFollowToOffsetOf(entity: Handle, offsetX: number, offsetY: number, offsetZ: number, movementSpeed: number,
+											 timeout: number, stoppingRange: number, persistFollowing: boolean): void;
+	taskForceMotionState(state: Hash, p2: boolean): void;
+	taskGetOffBoat(boat: Handle): void;
+	taskGoStraightToCoord(x: number, y: number, z: number, speed: number, timeout: number, targetHeading: number,
+												distanceToSlide: number): void;
+	taskGotoAiming(target: Handle, distanceToStopAt: number, StartAimingDist: number): void;
+	taskGoToCoordAndAimAtHatedEntitiesNearCoord(gotoX: number, gotoY: number, gotoZ: number, aimNearX: number,
+																							aimNearY: number, aimNearZ: number, speed: number, shoot: boolean, unknown1: number, unknown2: number,
+																							unkTrue: boolean, unknown3: number, heading: boolean, firingPattern: Hash): void;
+	taskGoToCoordAnyMeans(x: number, y: number, z: number, speed: number, p5: any, p6: boolean, walkingStyle: number,
+												p8: number): void;
+	taskGoToCoordAnyMeansExtraParams(x: number, y: number, z: number, speed: number, p5: any, p6: boolean,
+																	 walkingStyle: number, p8: number, p9: any, p10: any, p11: any): void;
+	taskGoToCoordAnyMeansExtraParamsWithCruiseSpeed(x: number, y: number, z: number, speed: number, p5: any,
+																									p6: boolean, walkingStyle: number, p8: number, p9: any, p10: any, p11: any, p12: any): void;
+	taskGoToCoordWhileAimingAtCoord(x: number, y: number, z: number, aimAtX: number, aimAtY: number, aimAtZ: number,
+																	moveSpeed: number, p8: boolean, p9: number, p10: number, p11: boolean, flags: any, p13: boolean,
+																	firingPattern: Hash): void;
+	taskGotoOffset(p1: any, p2: any, x: number, y: number, z: number, duration: number): void;
+	taskGoToWhileAimingAtEntity(entityToWalkTo: Handle, entityToAimAt: Handle, speed: number, shootatEntity: boolean,
+															p5: number, p6: number, p7: boolean, p8: boolean, firingPattern: Hash): void;
+	taskGuardCurrentPosition(p1: number, p2: number, p3: number): void;
+	taskGuardSphereDefensiveArea(p1: number, p2: number, p3: number, p4: number, p5: number, p6: any, p7: number,
+															 p8: number, p9: number, p10: number): void;
+	taskHandsUp(duration: number, facingPed: Handle, p3: number, p4: boolean): void;
+	taskHeliChase(entityToFollow: Handle, x: number, y: number, z: number): void;
+	taskHeliMission(vehicle: Handle, p2: any, pedToFollow: Handle, posX: number, posY: number, posZ: number,
+									mode: number, speed: number, radius: number, angle: number, p11: number, height: number, p13: number, p14: number): void;
+	taskJump(unused: boolean): void;
+	taskLeaveAnyVehicle(p1: number, p2: number): void;
+	taskLeaveVehicle(vehicle: Handle, flags: number): void;
+	taskLookAt(lookAt: Handle, duration: number, unknown1: number, unknown2: number): void;
+	taskMoveNetwork(task: string, multiplier: number, p3: boolean, animDict: string, flags: number): void;
+	taskMoveNetworkAdvanced(p1: string, p2: number, p3: number, p4: number, p5: number, p6: number, p7: number,
+													p8: any, p9: number, p10: boolean, animDict: string, flags: number): void;
+	taskOpenVehicleDoor(vehicle: Handle, timeOut: number, doorIndex: number, speed: number): void;
+	taskParachute(p1: boolean): void;
+	taskParachuteToTarget(x: number, y: number, z: number): void;
+	taskPatrol(p1: string, p2: any, p3: boolean, p4: boolean): void;
+	taskPause(ms: number): void;
+	taskPerformSequence(taskSequence: Handle): void;
+	taskPlaneChase(entityToFollow: Handle, x: number, y: number, z: number): void;
+	taskPlaneLand(plane: Handle, runwayStartX: number, runwayStartY: number, runwayStartZ: number, runwayEndX: number,
+								runwayEndY: number, runwayEndZ: number): void;
+	taskPlaneMission(plane: Handle, targetVehicle: Handle, targetPed: Handle, destinationX: number, destinationY: number,
+									 destinationZ: number, p7: number, physicsSpeed: number, p9: number, p10: number, maxAltitude: number, minAltitude: number): void;
+	taskPlantBomb(x: number, y: number, z: number, heading: number): void;
+	taskPlayAnim(animDictionary: string, animationName: string, speed: number, speedMultiplier: number, duration: number,
+							 flag: number, playbackRate: number, lockX: boolean, lockY: boolean, lockZ: boolean): void;
+	taskPlayAnimAdvanced(animDict: string, animName: string, posX: number, posY: number, posZ: number, rotX: number,
+											 rotY: number, rotZ: number, speed: number, speedMultiplier: number, duration: number, flag: any,
+											 animTime: number, p14: any, p15: any): void;
+	taskPlayPhoneGestureAnimation(p1: any, p2: any, p3: any, p4: number, p5: number, p6: boolean, p7: boolean): void;
+	taskPutDirectlyIntoCover(x: number, y: number, z: number, timeout: any, p5: boolean, p6: number, p7: boolean,
+													 p8: boolean, p9:object, p10: boolean): void;
+	taskPutDirectlyIntoMelee(meleeTarget: Handle, p2: number, p3: number, p4: number, p5: boolean): void;
+	taskRappelFromHeli(p1: number): void;
+	taskReactAndFlee(fleeTarget: Handle): void;
+	taskReloadWeapon(doReload: boolean): void;
+	taskScriptedAnimation(p1: any, p2: any, p3: any, p4: number, p5: number): void;
+	taskSeekCoverFrom(target: Handle, duration: number, p3: boolean): void;
+	taskSeekCoverToCoords(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, p7: any, p8: boolean): void;
+	taskSetBlockingOfNonTemporaryEvents(toggle: boolean): void;
+	taskSetDecisionMaker(p1: Hash): void;
+	taskShockingEventReact(eventHandle: number): void;
+	taskShootAtCoord(x: number, y: number, z: number, duration: number, firingPattern: Hash): void;
+	taskShuffleToNextVehicleSeat(vehicle: Handle): void;
+	taskSkyDive(): void;
+	taskSlideToCoord(x: number, y: number, z: number, heading: number, p5: number): void;
+	taskSlideToCoordHdgRate(x: number, y: number, z: number, heading: number, p5: number, p6: number): void;
+	taskSmartFlee(fleeTarget: Handle, distance: number, fleeTime: any, p4: boolean, p5: boolean): void;
+	taskSmartFleeCoord(x: number, y: number, z: number, distance: number, time: number, p6: boolean, p7: boolean): void;
+	taskStandGuard(x: number, y: number, z: number, heading: number, scenarioName: string): void;
+	taskStandStill(time: number): void;
+	taskStartScenarioAtPosition(scenarioName: string, x: number, y: number, z: number, heading: number, p6: any,
+															p7: boolean, p8: boolean): void;
+	taskStartScenarioInPlace(scenarioName: string, unkDelay: number, playEnterAnim: boolean): void;
+	taskStayInCover(): void;
+	taskStealthKill(target: Handle, killType: Hash, p3: number, p4: boolean): void;
+	taskStopPhoneGestureAnimation(): void;
+	taskSwapWeapon(p1: boolean): void;
+	taskSweepAim(anim: string, p2: string, p3: string, p4: string, p5: number, vehicle: Handle, p7: number, p8: number): void;
+	taskSynchronizedScene(scene: number, animDictionary: string, animationName: string, speed: number,
+												speedMultiplier: number, duration: number, flag: number, playbackRate: number, p9: any): void;
+	taskTurnToFace(entity: Handle, duration: number): void;
+	taskTurnToFaceCoord(x: number, y: number, z: number, duration: number): void;
+	taskUseMobilePhone(p1: number): void;
+	taskUseMobilePhoneTimed(duration: number): void;
+	taskUseNearestScenarioToCoordWarp(x: number, y: number, z: number, radius: number, p5: any): void;
+	taskVehicleAimAt(target: Handle): void;
+	taskVehicleChase(targetEnt: Handle): void;
+	taskVehicleDriveToCoord(vehicle: Handle, x: number, y: number, z: number, speed: number, p6: any,
+													vehicleModel: Hash, drivingMode: number, stopRange: number, p10: number): void;
+	taskVehicleDriveToCoordLongrange(vehicle: Handle, x: number, y: number, z: number, speed: number, driveMode: number,
+																	 stopRange: number): void;
+	taskVehicleDriveWander(vehicle: Handle, speed: number, drivingStyle: number): void;
+	taskVehicleEscort(vehicle: Handle, targetVehicle: Handle, mode: number, speed: number, drivingStyle: number,
+										minDistance: number, p7: number, noRoadsDistance: number): void;
+	taskVehicleFollow(vehicle: Handle, targetEntity: Handle, drivingStyle: number, speed: number, minDistance: number): void;
+	taskVehicleFollowWaypointRecording(vehicle: Handle, WPRecording: string, p3: number, p4: number, p5: number,
+																		 p6: number, p7: number, p8: boolean, p9: number): void;
+	taskVehicleGotoNavmesh(vehicle: Handle, x: number, y: number, z: number, speed: number, behaviorFlag: number,
+												 stoppingRange: number): void;
+	taskVehicleHeliProtect(vehicle: Handle, entityToFollow: Handle, targetSpeed: number, p4: number, radius: number,
+												 altitude: number, p7: number): void;
+	taskVehicleMissionCoorsTarget(vehicle: Handle, x: number, y: number, z: number, p5: number, p6: number, p7: number,
+																p8: number, p9: number, p10: boolean): void;
+	taskVehicleMissionTarget(vehicle: Handle, pedTarget: Handle, mode: number, maxSpeed: number, drivingStyle: number,
+													 minDistance: number, p7: number, p8: boolean): void;
+	taskVehiclePark(vehicle: Handle, x: number, y: number, z: number, heading: number, mode: number, radius: number,
+									keepEngineOn: boolean): void;
+	taskVehicleShootAt(target: Handle, p2: number): void;
+	taskVehicleTempAction(vehicle: Handle, action: number, time: number): void;
+	taskWanderInArea(x: number, y: number, z: number, radius: number, minimalLength: number, timeBetweenWalks: number): void;
+	taskWanderStandard(p1: number, p2: number): void;
+	taskWarpIntoVehicle(vehicle: Handle, seat: number): void;
+	taskWrithe(target: Handle, time: number, p3: number): void;
+
 }
 
 interface PickupMp extends EntityMp {
