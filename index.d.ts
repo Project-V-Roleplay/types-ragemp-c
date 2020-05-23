@@ -525,7 +525,7 @@ interface PedMp extends EntityMp {
 	taskWanderStandard(p1: number, p2: number): void;
 	taskWarpIntoVehicle(vehicle: Handle, seat: number): void;
 	taskWrithe(target: Handle, time: number, p3: number): void;
-
+	isActiveInScenario(): boolean;
 }
 
 interface PickupMp extends EntityMp {
