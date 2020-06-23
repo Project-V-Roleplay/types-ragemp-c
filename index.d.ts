@@ -3477,6 +3477,7 @@ interface EventMpPool {
 	callRemoteProc(procName: string, ...args: any[]): Promise<any>;
 	cancelPendingRpc(procName: string): null;
 	hasPendingRpc(procName: string): boolean;
+	addProc(procName: string, callback: (...args: any[]) => void): void;
 }
 
 interface DummyEntityMpPool extends EntityMpPool<DummyEntity> {
