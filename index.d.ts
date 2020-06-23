@@ -3289,6 +3289,7 @@ interface EventMpPool {
 	callRemote(eventName: string, ...args: any[]): void;
 	remove(eventName: string, handler?: (...args: any[]) => void): void;
 	remove(eventNames: string[]): void;
+	addProc(procName: string, callback: (...args: any[]) => void): void;
 }
 
 interface MarkerMpPool extends EntityMpPool<MarkerMp> {
